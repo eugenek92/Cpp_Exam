@@ -3,7 +3,7 @@ Topic: Create a functional streaming service application "CppStream".
 
 The main task is to provide the user with the ability to save information about multimedia data (movies, serials, cartoon's, anime)
 
-Завдання
+##Завдання
 
 ### Створити функціонал додатку "Стрімінговий сервіс CppStream".
 
