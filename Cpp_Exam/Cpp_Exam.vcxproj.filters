@@ -21,5 +21,8 @@
     <ClCompile Include="Logo.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
