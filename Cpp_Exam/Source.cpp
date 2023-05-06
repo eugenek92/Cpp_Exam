@@ -1,7 +1,8 @@
 #include <iostream>
 
 using namespace std;
+void Logo();
 
 void main() {
-	cout << "Hello world!";
+	Logo();
 }
