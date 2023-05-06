@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include "Store.h"
 
 using namespace std;
 
@@ -73,7 +75,7 @@ void Mainmenu() {
 				system("cls");
 				cout << "Hello administrator " << username << "!" << endl;
 				cout <<"Administrator " << username << " please, select what you need: ";
-				cout << "\n1.Show store\n2.Search\n3.Add new directory\n4.Edit directory\n5.Delete directory\n0.Exit" << endl;
+				cout << "\n1.Show store\n2.Search\n3.Add new object\n4.Edit object\n5.Delete object\n0.Exit" << endl;
 				cin >> choice;
 				switch (choice) {
 					exitMenu = false;
