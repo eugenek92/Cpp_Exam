@@ -23,5 +23,10 @@ public:
 	void FillMovieInf();
 	void ShowMovie();
 	void AddMovie();
-	void DeleteMovie(int DeletingID);
+	void DeleteMovie(int deletingID);
+	void SearchByName();
+	void SearchByGenre();
+	void SearchByCountry();
+	void SearchByYear();
+	void EditMovie();
 };
