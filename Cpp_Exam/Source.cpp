@@ -5,6 +5,6 @@ void Logo();
 void Mainmenu();
 
 void main() {
-	/*Logo();*/
+	Logo();
 	Mainmenu();
 }

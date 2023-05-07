@@ -131,11 +131,9 @@
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Movie.cpp" />
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="Store.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Movie.h" />
-    <ClInclude Include="Store.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

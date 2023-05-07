@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "Store.h"
+#include "Movie.h"
 
 using namespace std;
 
@@ -10,6 +10,9 @@ void Mainmenu() {
 	bool exitMainMenu = false;
 	bool exitMenu = false;
 	string username;
+	Movie Movies;
+	Movies.CreateMovie();
+	int DeletingID = 0;
 
 	while (!exitProgram) {
 		system("cls");
@@ -32,6 +35,20 @@ void Mainmenu() {
 				switch (choice) {
 					exitMenu = false;
 					while (!exitMenu) {
+				case 1:
+					system("cls");
+					Movies.ShowMovie();
+					cout << "0.Go back" << endl;
+					cin >> choice;
+					switch (choice) {
+					case 0:
+						exitMenu = true;
+						break;
+					default:
+						cout << "Error! Please, try again!" << endl;
+						break;
+					}
+					break;
 				case 2:
 					system("cls");
 					cout << "Search by: \n1.Name;\n2.Genre;\n3.Country of production;\n4.Year of production;\n0.Go back\n";

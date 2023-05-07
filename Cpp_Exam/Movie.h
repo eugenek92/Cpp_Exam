@@ -15,7 +15,13 @@ private:
 	unsigned int seasons;
 	unsigned int time;
 	string plot;
+	int movieID=0;
+	int listSize = 1;
+	Movie* movieList;
 public:
 	void CreateMovie();
+	void FillMovieInf();
 	void ShowMovie();
+	void AddMovie();
+	void DeleteMovie(int DeletingID);
 };
