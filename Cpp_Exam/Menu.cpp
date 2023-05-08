@@ -32,8 +32,9 @@ void Mainmenu() {
 				system("cls");
 				cout << "======================CppStream======================" << endl;
 				cout << "Hello " << username << "!" << "\nWelcome to our stream-service \"CppStream\"" << endl;
-				cout << username << " please, select what you want to do: ";
-				cout << "\n1.Show store\n2.Search\n3.Watch information about service\n0.Exit" << endl;
+				cout << "\n(!) " << username << " if you use \"CppStream\" first time, please read the rules of writing (section 3) ";
+				cout << "\n" << username << " please, select what you want to do: ";
+				cout << "\n\n1.Show store\n2.Search\n3.Rules of use and information\n0.Exit" << endl;
 				cin >> choice;
 				switch (choice) {
 					exitMenu = false;
@@ -87,7 +88,11 @@ void Mainmenu() {
 						"\n\nThank you for reading!\n" <<
 						"CppStream is examination project, which was created to meet the needs " <<
 						"\nof finding information about movies, " <<
-						"serials, cartoon's, anime. \nWe hope you enjoy using our app CppStream" <<
+						"serials, cartoon's, anime. "<<
+						"\n\n===========================Rules of writing==========================="<<
+						"\n" <<username<<", to write words with spaces use \"_\""<<
+						"\nExample: \"Hello world\" must be wright like \"Hello_world\"" <<
+						"\n\nWe hope you enjoy using our app CppStream" <<
 						"\n\n0.Go back" << endl;
 					cin >> choice;
 					switch (choice) {
@@ -120,9 +125,9 @@ void Mainmenu() {
 				while (!exitMainMenu) {
 					system("cls");
 					cout << "======================CppStream======================" << endl;
-					cout << "Hello administrator " << username << "!" << endl;
+					cout << "\nHello administrator " << username << "!" << endl;
 					cout << "Administrator " << username << " please, select what you need: ";
-					cout << "\n1.Show store\n2.Search\n3.Add new object\n4.Edit object\n5.Delete object\n0.Exit" << endl;
+					cout << "\n\n1.Show store\n2.Search\n3.Add new object\n4.Edit object\n5.Delete object\n0.Exit" << endl;
 					cin >> choice;
 					switch (choice) {
 						exitMenu = false;

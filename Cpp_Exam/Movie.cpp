@@ -6,7 +6,7 @@ using namespace std;
 
 void Movie::CreateMovie() {
 	movieList = new Movie[listSize];
-	movieList[0].name = "Final Fantasy";
+	movieList[0].name = "Final_Fantasy";
 	movieList[0].type = "Anime";
 	movieList[0].genre = "Fantasy";
 	movieList[0].country = "Japan";
@@ -18,7 +18,7 @@ void Movie::CreateMovie() {
 	movieList[0].movieID = 0;
 
 
-	movieList[1].name = "Alina in Wonderlands";
+	movieList[1].name = "Alina_In_Wonderlands";
 	movieList[1].type = "Cartoon";
 	movieList[1].genre = "Adventure";
 	movieList[1].country = "Australia";
@@ -30,10 +30,10 @@ void Movie::CreateMovie() {
 	movieList[1].movieID = 1;
 
 
-	movieList[2].name = "Fate of the Android";
+	movieList[2].name = "Fate_of_the_Android";
 	movieList[2].type = "Serial";
 	movieList[2].genre = "Fantasy";
-	movieList[2].country = "South Korea";
+	movieList[2].country = "South_Korea";
 	movieList[2].year = 2020;
 	movieList[2].series = 18;
 	movieList[2].seasons = 1;
@@ -42,7 +42,7 @@ void Movie::CreateMovie() {
 	movieList[2].movieID = 2;
 
 
-	movieList[3].name = "Streets of Rage";
+	movieList[3].name = "Streets_of_Rage";
 	movieList[3].type = "Movie";
 	movieList[3].genre = "Action";
 	movieList[3].country = "USA";
@@ -54,7 +54,7 @@ void Movie::CreateMovie() {
 	movieList[3].movieID = 3;
 
 
-	movieList[4].name = "Vacation's in VillageFalls";
+	movieList[4].name = "Vacation's_in_VillageFalls";
 	movieList[4].type = "Cartoon series";
 	movieList[4].genre = "Mystery";
 	movieList[4].country = "USA";
@@ -66,7 +66,7 @@ void Movie::CreateMovie() {
 	movieList[4].movieID = 4;
 
 
-	movieList[5].name = "Policeman in Paris";
+	movieList[5].name = "Policeman_in_Paris";
 	movieList[5].type = "Movie";
 	movieList[5].genre = "Comedy";
 	movieList[5].country = "France";
@@ -102,7 +102,7 @@ void Movie::CreateMovie() {
 	movieList[7].movieID = 7;
 
 
-	movieList[8].name = "The life of beavers";
+	movieList[8].name = "The_life_of_beavers";
 	movieList[8].type = "Movie";
 	movieList[8].genre = "Documental";
 	movieList[8].country = "Canada";
@@ -187,6 +187,7 @@ void Movie::DeleteMovie(int deletingID) {
 }
 
 void Movie::SearchByName() {
+	bool iSearch = false;
 	string searchName;
 	cout << "Enter the name you want to search: " << endl;
 	cin >> searchName;
@@ -194,6 +195,7 @@ void Movie::SearchByName() {
 	cout << "Results for searching name: " << searchName << endl;
 	for (int i = 0; i < listSize; i++) {
 		if (movieList[i].name == searchName) {
+			iSearch = true;
 			cout << endl;
 			cout << "Name: " << movieList[i].name << endl;
 			cout << "Type: " << movieList[i].type << endl;
@@ -207,14 +209,15 @@ void Movie::SearchByName() {
 			cout << "ID: " << movieList[i].movieID << endl;
 			cout << endl;
 		}
-		else if (movieList[i].name != searchName) {
-			cout << "Sorry, we hawn't object with name " << searchName << endl;
-		}
-		system("pause");
 	}
+	if (!iSearch) {
+		cout << "Sorry, we hawn't object with year " << searchName << endl;
+	}
+	system("pause");
 }
 
 void Movie::SearchByGenre() {
+	bool iSearch = false;
 	string searchGenre;
 	cout << "Genres are currently available: Action, Adventure, Comedy, Drama, Documental, Fantasy, Mystery" << endl;
 	cout << "Enter the genre you want to search: " << endl;
@@ -223,6 +226,7 @@ void Movie::SearchByGenre() {
 	cout << "Results for searching genre: " << searchGenre << endl;
 	for (int i = 0; i < listSize; i++) {
 		if (movieList[i].genre == searchGenre) {
+			iSearch = true;
 			cout << endl;
 			cout << "Name: " << movieList[i].name << endl;
 			cout << "Type: " << movieList[i].type << endl;
@@ -236,14 +240,15 @@ void Movie::SearchByGenre() {
 			cout << "ID: " << movieList[i].movieID << endl;
 			cout << endl;
 		}
-		else if (movieList[i].genre != searchGenre) {
-			cout << "Sorry, we hawn't object with genre " << searchGenre << endl;
-		}
-		system("pause");
 	}
+	if (!iSearch) {
+		cout << "Sorry, we hawn't object with year " << searchGenre << endl;
+	}
+	system("pause");
 }
 
 void Movie::SearchByCountry() {
+	bool iSearch = false;
 	string searchCountry;
 	cout << "Countries are currently available: Australia, Canada, France, Japan, South Korea, USA" << endl;
 	cout << "Enter the country of production you want to search: " << endl;
@@ -252,6 +257,7 @@ void Movie::SearchByCountry() {
 	cout << "Results for searching country of production: " << searchCountry << endl;
 	for (int i = 0; i < listSize; i++) {
 		if (movieList[i].country == searchCountry) {
+			iSearch = true;
 			cout << endl;
 			cout << "Name: " << movieList[i].name << endl;
 			cout << "Type: " << movieList[i].type << endl;
@@ -265,21 +271,23 @@ void Movie::SearchByCountry() {
 			cout << "ID: " << movieList[i].movieID << endl;
 			cout << endl;
 		}
-		else if (movieList[i].country != searchCountry) {
-			cout << "Sorry, we hawn't object with country " << searchCountry << endl;
-		}
-		system("pause");
 	}
+	if (!iSearch) {
+		cout << "Sorry, we hawn't object with year " << searchCountry << endl;
+	}
+	system("pause");
 }
 
 void Movie::SearchByYear() {
+	bool iSearch = false;
 	unsigned int searchYear;
 	cout << "Enter the year of production you want to search: " << endl;
 	cin >> searchYear;
 	system("cls");
 	cout << "Results for searching year of production: " << searchYear << endl;
-	for (int i = 0; i < listSize; i++) {
+	 for (int i = 0; i < listSize; i++) {
 		if (movieList[i].year == searchYear) {
+			iSearch = true;
 			cout << endl;
 			cout << "Name: " << movieList[i].name << endl;
 			cout << "Type: " << movieList[i].type << endl;
@@ -293,11 +301,11 @@ void Movie::SearchByYear() {
 			cout << "ID: " << movieList[i].movieID << endl;
 			cout << endl;
 		}
-		else {
-			cout << "Sorry, we hawn't object with year " << searchYear << endl;
-		}
 	}
-	system("pause");
+	 if(!iSearch) {
+	 cout << "Sorry, we hawn't object with year " << searchYear << endl;
+		}
+	 system("pause");
 }
 
 void Movie::EditMovie() {
