@@ -40,8 +40,10 @@ void Movie::FillMovieInf() {
 }
 
 void Movie::ShowMovie() {
+	    cout << "======================CppStream======================";
 	for (int i = 0; i < listSize; i++) {
 		cout << endl;
+		cout << "====================================================="<<endl;
 		cout << "Name: " << movieList[i].name << endl;
 		cout << "Type: " << movieList[i].type << endl;
 		cout << "Genre: " << movieList[i].genre << endl;
@@ -52,6 +54,7 @@ void Movie::ShowMovie() {
 		cout << "Duration time: " << movieList[i].time << endl;
 		cout << "Plot: " << movieList[i].plot << endl;
 		cout << "ID: " << movieList[i].movieID << endl;
+		cout << "====================================================="<<endl;
 		cout << endl;
 	}
 }
