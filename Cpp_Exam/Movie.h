@@ -13,10 +13,10 @@ private:
 	unsigned int year;
 	unsigned int series;
 	unsigned int seasons;
-	unsigned int time;
+	double time;
 	string plot;
 	int movieID=0;
-	int listSize = 1;
+	int listSize = 9;
 	Movie* movieList;
 public:
 	void CreateMovie();
