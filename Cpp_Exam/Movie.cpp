@@ -7,8 +7,8 @@ using namespace std;
 void Movie::CreateMovie() {
 	movieList = new Movie[listSize];
 	movieList[0].name = "Final_Fantasy";
-	movieList[0].type = "Anime";
-	movieList[0].genre = "Fantasy";
+	movieList[0].type = "Cartoon series";
+	movieList[0].genre = "Anime";
 	movieList[0].country = "Japan";
 	movieList[0].year = 1992;
 	movieList[0].series = 18;
@@ -22,7 +22,7 @@ void Movie::CreateMovie() {
 	movieList[1].type = "Cartoon";
 	movieList[1].genre = "Adventure";
 	movieList[1].country = "Australia";
-	movieList[1].year = 1992;
+	movieList[1].year = 2002;
 	movieList[1].series = 0;
 	movieList[1].seasons = 0;
 	movieList[1].time = 132;
@@ -79,8 +79,8 @@ void Movie::CreateMovie() {
 
 
 	movieList[6].name = "CyberSword";
-	movieList[6].type = "Anime";
-	movieList[6].genre = "Fantasy";
+	movieList[6].type = "Cartoon series";
+	movieList[6].genre = "Anime";
 	movieList[6].country = "Japan";
 	movieList[6].year = 2023;
 	movieList[6].series = 8;
@@ -118,9 +118,9 @@ void Movie::CreateMovie() {
 void Movie::FillMovieInf() {
 	cout << "Enter object name: ";
 	cin >> name;
-	cout << "Enter "<< name <<" type (Movie, Cartoon, Serial, Cartoon series, Anime): ";
+	cout << "Enter "<< name <<" type (Movie, Cartoon, Serial, Cartoon series): ";
 	cin >> type;
-	cout << "Enter " << type << " genre (Action, Adventure, Comedy, Drama, Documental, Fantasy, Mystery): ";
+	cout << "Enter " << type << " genre (Action, Adventure, Anime Comedy, Drama, Documental, Fantasy, Mystery): ";
 	cin >> genre;
 	cout << "Enter " << name << " country of production: ";
 	cin >> country;
@@ -219,7 +219,7 @@ void Movie::SearchByName() {
 void Movie::SearchByGenre() {
 	bool iSearch = false;
 	string searchGenre;
-	cout << "Genres are currently available: Action, Adventure, Comedy, Drama, Documental, Fantasy, Mystery" << endl;
+	cout << "Genres are currently available: Action, Adventure, Anime, Comedy, Drama, Documental, Fantasy, Mystery" << endl;
 	cout << "Enter the genre you want to search: " << endl;
 	cin >> searchGenre;
 	system("cls");
@@ -330,7 +330,7 @@ void Movie::EditMovie() {
 				cin >> movieList[i].name;
 				break;
 			case 2:
-				cout << "Enter new object type (Movie, Cartoon, Serial, Cartoon series, Anime): " << endl;
+				cout << "Enter new object type (Movie, Cartoon, Serial, Cartoon series): " << endl;
 				cin >> movieList[i].type;
 				break;
 			case 3:
