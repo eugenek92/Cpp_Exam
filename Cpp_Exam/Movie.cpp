@@ -7,14 +7,14 @@ using namespace std;
 fstream file;
 
 void Movie::FillMovieInf() {
-	file.open("Test", ios_base::app);
+	file.open("CppList", ios_base::app);
 	cout << "Enter object name: ";
 	getline(cin, name);
 	file << name << "\n";
 	cout << "Enter "<< name <<" type (Movie, Cartoon, Serial, Cartoon series): ";
-	getline(cin, name);
+	getline(cin, type);
 	file << type << "\n";
-	cout << "Enter " << name << " genre (Action, Adventure, Anime Comedy, Drama, Documental, Fantasy, Mystery): ";
+	cout << "Enter " << name << " genre (Action, Adventure, Anime, Comedy, Drama, Documental, Fantasy, Mystery): ";
 	getline(cin, genre);
 	file << genre << "\n";
 	cout << "Enter " << name << " country of production: ";
@@ -121,7 +121,6 @@ void Movie::SearchByName() {
 void Movie::SearchByGenre() {
 	bool iSearch = false;
 	string searchGenre;
-	cout << "Genres are currently available: Action, Adventure, Anime, Comedy, Drama, Documental, Fantasy, Mystery" << endl;
 	cout << "Enter the genre you want to search: " << endl;
 	cin >> searchGenre;
 	system("cls");
@@ -152,7 +151,6 @@ void Movie::SearchByGenre() {
 void Movie::SearchByCountry() {
 	bool iSearch = false;
 	string searchCountry;
-	cout << "Countries are currently available: Australia, Canada, France, Japan, South Korea, USA" << endl;
 	cout << "Enter the country of production you want to search: " << endl;
 	cin >> searchCountry;
 	system("cls");
@@ -236,7 +234,7 @@ void Movie::EditMovie() {
 				cin >> movieList[i].type;
 				break;
 			case 3:
-				cout << "Enter new object genre: " << endl;
+				cout << "Enter new object genre (Action, Adventure, Anime, Comedy, Drama, Documental, Fantasy, Mystery): " << endl;
 				cin >> movieList[i].genre;
 				break;
 			case 4:
@@ -277,7 +275,7 @@ void Movie::EditMovie() {
 
 
 void Movie::ReadFile() {
-	file.open("Test", ios_base::in);
+	file.open("CppList", ios_base::in);
 	if (file.is_open()) {
 		string line;
 		int count = 0;
@@ -306,9 +304,9 @@ void Movie::ReadFile() {
 }
 
 void Movie::WriteFile() {
-	file.open("Test", ios_base::trunc);
+	file.open("CppList", ios_base::trunc);
 	file.close();
-	file.open("Test", ios_base::app);
+	file.open("CppList", ios_base::app);
 	if (file.is_open()) {
 		for (int i = 0; i < listSize; i++) {
 			file << movieList[i].name << "\n";
