@@ -15,14 +15,14 @@ private:
 	string seasons;
 	string time;
 	string plot;
-	int movieID=0;
+	string movieID;
 	int listSize = 0;
 	Movie* movieList;
 public:
 	void FillMovieInf();
 	void ShowMovie();
 	void AddMovie();
-	void DeleteMovie(int deletingID);
+	void DeleteMovie(string deletingID);
 	void SearchByName();
 	void SearchByGenre();
 	void SearchByCountry();

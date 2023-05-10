@@ -35,6 +35,9 @@ void Movie::FillMovieInf() {
 	cout << "Write " << name << " plot:";
 	getline(cin, plot);
 	file << plot << "\n";
+	cout << "Write " << name << " ID:";
+	getline(cin, movieID);
+	file << movieID << "\n";
 	file.close();
 }
 
@@ -64,23 +67,22 @@ void Movie::AddMovie() {
 	for (int i = 0; i < listSize; i++) {
 		tmpArr[i] = movieList[i];
 	}
-	movieID++;
 	tmpArr[listSize].FillMovieInf();
-	tmpArr[listSize].movieID = movieID;
 	delete[]movieList;
 	movieList = tmpArr;
 	listSize++;
 }
 
-void Movie::DeleteMovie(int deletingID) {
+void Movie::DeleteMovie(string deletingID) {
 	Movie* tmpArr = new Movie[listSize - 1];
-
-	for (int i = 0; i < listSize; i++) {
-		if (deletingID > i) {
-			tmpArr[i] = movieList[i];
+	for (int i = 0,j=0; i < listSize; i++,j++) {
+		if (movieList[i].movieID != deletingID) {
+			tmpArr[j] = movieList[i];
+			system("cls");
+			cout << "You wrong! App must be restarted" << endl;
 		}
-		else if (deletingID < i) {
-			tmpArr[i - 1] = movieList[i];
+		else {
+			j--;
 		}
 	}
 	delete[]movieList;
@@ -211,7 +213,7 @@ void Movie::SearchByYear() {
 void Movie::EditMovie() {
 	bool exitMenu = false;
 	int edit;
-	int deletingID;
+	string deletingID;
 	cout << "Enter ID object, you want to edit: " << endl;
 	cin >> deletingID;
 	system("cls");
@@ -282,7 +284,7 @@ void Movie::ReadFile() {
 		while (getline(file, line)) {
 			count++;
 		}
-		listSize = count / 9;
+		listSize = count / 10;
 		file.clear();
 		file.seekg(0, ios::beg);
 		movieList = new Movie[listSize];
@@ -297,6 +299,7 @@ void Movie::ReadFile() {
 			getline(file, movieList[i].series);
 			getline(file, movieList[i].time);
 			getline(file, movieList[i].plot);
+			getline(file, movieList[i].movieID);
 			i++;
 		}
 	}
@@ -318,6 +321,7 @@ void Movie::WriteFile() {
 			file << movieList[i].series << "\n";
 			file << movieList[i].time << "\n";
 			file << movieList[i].plot << "\n";
+			file << movieList[i].movieID << "\n";
 		}
 	}
 	file.close();

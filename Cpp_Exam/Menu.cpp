@@ -15,7 +15,7 @@ void Mainmenu() {
 	string username;
 	Movie Movies;
     Movies.ReadFile();
-	int deletingID = 0;
+	string deletingID;
 	string searchName;
 
 	while (!exitProgram) {
