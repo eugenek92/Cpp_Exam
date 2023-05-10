@@ -8,6 +8,8 @@ fstream file;
 
 void Movie::FillMovieInf() {
 	file.open("CppList", ios_base::app);
+	getline(cin, name);
+	file << name << "\n";
 	cout << "Enter object name: ";
 	getline(cin, name);
 	file << name << "\n";
@@ -85,6 +87,9 @@ void Movie::DeleteMovie(string deletingID) {
 			j--;
 		}
 	}
+	file.open("CppList", std::ofstream::out);
+	file.close();
+
 	delete[]movieList;
 	movieList = tmpArr;
 	listSize--;
@@ -273,6 +278,8 @@ void Movie::EditMovie() {
 			}
 		}
 	}
+	file.open("CppList", std::ofstream::out);
+	file.close();
 }
 
 

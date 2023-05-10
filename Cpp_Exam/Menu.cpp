@@ -194,6 +194,7 @@ void Mainmenu() {
 					case 4:
 						system("cls");
 						Movies.EditMovie();
+						Movies.WriteFile();
 						cout << "Editing was successful!\n0.Go back" << endl;
 						cin >> choice;
 						switch (choice) {
@@ -210,6 +211,7 @@ void Mainmenu() {
 						cout << "Administrator, enter ID of object you want to delete: ";
 						cin >> deletingID;
 						Movies.DeleteMovie(deletingID);
+						Movies.WriteFile();
 						cout << "Deletion was successful!\n0.Go back" << endl;
 						cin >> choice;
 						switch (choice) {
