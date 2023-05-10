@@ -1,8 +1,10 @@
 #include <iostream>
 #include "Movie.h"
 #include <string>
+#include <fstream>
 
 using namespace std;
+fstream file;
 
 void Movie::CreateMovie() {
 	movieList = new Movie[listSize];
@@ -10,130 +12,62 @@ void Movie::CreateMovie() {
 	movieList[0].type = "Cartoon series";
 	movieList[0].genre = "Anime";
 	movieList[0].country = "Japan";
-	movieList[0].year = 1992;
-	movieList[0].series = 18;
-	movieList[0].seasons = 15;
-	movieList[0].time = 25;
+	movieList[0].year = "1992";
+	movieList[0].series = "18";
+	movieList[0].seasons = "15";
+	movieList[0].time = "25";
 	movieList[0].plot = "Japanese fantasy franchise, which has more than 10 seasons.";
 	movieList[0].movieID = 0;
-
-
-	movieList[1].name = "Alina_In_Wonderlands";
-	movieList[1].type = "Cartoon";
-	movieList[1].genre = "Adventure";
-	movieList[1].country = "Australia";
-	movieList[1].year = 2002;
-	movieList[1].series = 0;
-	movieList[1].seasons = 0;
-	movieList[1].time = 132;
-	movieList[1].plot = "A fabulous story about a girl Alina who fell into a kangaroo hole.";
-	movieList[1].movieID = 1;
-
-
-	movieList[2].name = "Fate_of_the_Android";
-	movieList[2].type = "Serial";
-	movieList[2].genre = "Fantasy";
-	movieList[2].country = "South_Korea";
-	movieList[2].year = 2020;
-	movieList[2].series = 18;
-	movieList[2].seasons = 1;
-	movieList[2].time = 50;
-	movieList[2].plot = "An exciting series that describes the entire life cycle of Android.";
-	movieList[2].movieID = 2;
-
-
-	movieList[3].name = "Streets_of_Rage";
-	movieList[3].type = "Movie";
-	movieList[3].genre = "Action";
-	movieList[3].country = "USA";
-	movieList[3].year = 1989;
-	movieList[3].series = 0;
-	movieList[3].seasons = 0;
-	movieList[3].time = 145;
-	movieList[3].plot = "Action movie about a former policeman who challenged city crime.";
-	movieList[3].movieID = 3;
-
-
-	movieList[4].name = "Vacation's_in_VillageFalls";
-	movieList[4].type = "Cartoon series";
-	movieList[4].genre = "Mystery";
-	movieList[4].country = "USA";
-	movieList[4].year = 2019;
-	movieList[4].series = 10;
-	movieList[4].seasons = 3;
-	movieList[4].time = 21;
-	movieList[4].plot = "A mystical story about the summer vacation of schoolchildren who unravel the secrets of a small town.";
-	movieList[4].movieID = 4;
-
-
-	movieList[5].name = "Policeman_in_Paris";
-	movieList[5].type = "Movie";
-	movieList[5].genre = "Comedy";
-	movieList[5].country = "France";
-	movieList[5].year = 1973;
-	movieList[5].series = 0;
-	movieList[5].seasons = 0;
-	movieList[5].time = 95;
-	movieList[5].plot = "A funny police story about the adventures of a witty policeman.";
-	movieList[5].movieID = 5;
-
-
-	movieList[6].name = "CyberSword";
-	movieList[6].type = "Cartoon series";
-	movieList[6].genre = "Anime";
-	movieList[6].country = "Japan";
-	movieList[6].year = 2023;
-	movieList[6].series = 8;
-	movieList[6].seasons = 1;
-	movieList[6].time = 25;
-	movieList[6].plot = "Short anime series, about technologies of the future, problems of the past...";
-	movieList[6].movieID = 6;
-
-
-	movieList[7].name = "Undercover";
-	movieList[7].type = "Serial";
-	movieList[7].genre = "Drama";
-	movieList[7].country = "USA";
-	movieList[7].year = 1998;
-	movieList[7].series = 4;
-	movieList[7].seasons = 12;
-	movieList[7].time = 53;
-	movieList[7].plot = "A collection of stories about police officers forced to live a double life.";
-	movieList[7].movieID = 7;
-
-
-	movieList[8].name = "The_life_of_beavers";
-	movieList[8].type = "Movie";
-	movieList[8].genre = "Documental";
-	movieList[8].country = "Canada";
-	movieList[8].year = 2010;
-	movieList[8].series = 0;
-	movieList[8].seasons = 0;
-	movieList[8].time = 108;
-	movieList[8].plot = "Immerse yourself in the wonderful world of beavers.";
-	movieList[8].movieID = 8;
-
 }
+
+void Movie::FirstFile() {
+	file.open("Test", ios::out);
+	if (file.is_open()) {
+		file << movieList[0].name << endl;
+		file << "Cartoon series\n";
+		file << "Anime\n";
+		file << "Japan\n";
+		file << "1992\n";
+		file << "18\n";
+		file << "15\n";
+		file << "25\n";
+		file << "Japanese fantasy franchise, which has more than 10 seasons.\n";
+		file.close();
+	}
+}
+
+
 
 void Movie::FillMovieInf() {
 	cout << "Enter object name: ";
-	cin >> name;
+	getline(cin, name);
+	file.open("Test", ios_base::app);
+	file << name << "\n";
 	cout << "Enter "<< name <<" type (Movie, Cartoon, Serial, Cartoon series): ";
-	cin >> type;
-	cout << "Enter " << type << " genre (Action, Adventure, Anime Comedy, Drama, Documental, Fantasy, Mystery): ";
-	cin >> genre;
+	getline(cin, type);
+	file << type << "\n";
+	cout << "Enter " << name << " genre (Action, Adventure, Anime Comedy, Drama, Documental, Fantasy, Mystery): ";
+	getline(cin, genre);
+	file << genre << "\n";
 	cout << "Enter " << name << " country of production: ";
-	cin >> country;
+	getline(cin, country);
+	file << country << "\n";
 	cout << "Enter " << name << " year of production: ";
-	cin >> year;
+	getline(cin, year);
+	file << year << "\n";
 	cout << "Enter " << name << " number of seasons: ";
-	cin >> seasons;
+	getline(cin, seasons);
+	file << seasons << "\n";
 	cout << "Enter " << name << " number of series: ";
-	cin >> series;
+	getline(cin, series);
+	file << series << "\n";
 	cout << "Enter " << name << " duration (in minutes): ";
-	cin >> time;
+	getline(cin, time);
+	file << time << "\n";
 	cout << "Write " << name << " plot:";
-	cin >> plot;
+	getline(cin, plot);
+	file << plot << "\n";
+	file.close();
 }
 
 void Movie::ShowMovie() {
@@ -280,7 +214,7 @@ void Movie::SearchByCountry() {
 
 void Movie::SearchByYear() {
 	bool iSearch = false;
-	unsigned int searchYear;
+	string searchYear;
 	cout << "Enter the year of production you want to search: " << endl;
 	cin >> searchYear;
 	system("cls");
@@ -371,4 +305,54 @@ void Movie::EditMovie() {
 			}
 		}
 	}
+}
+
+
+void Movie::ReadFile() {
+	file.open("Test", ios_base::in);
+	if (file.is_open()) {
+		string line;
+		int count = 0;
+		while (getline(file, line)) {
+			count++;
+		}
+		listSize = count / 9;
+		file.clear();
+		file.seekg(0, ios::beg);
+		movieList = new Movie[listSize];
+		int i = 1;
+		while (i < listSize) {
+			getline(file, movieList[i].name);
+			getline(file, movieList[i].type);
+			getline(file, movieList[i].genre);
+			getline(file, movieList[i].country);
+			getline(file, movieList[i].year);
+			getline(file, movieList[i].seasons);
+			getline(file, movieList[i].series);
+			getline(file, movieList[i].time);
+			getline(file, movieList[i].plot);
+			i++;
+		}
+	}
+	file.close();
+}
+
+void Movie::WriteFile() {
+	file.open("Test", ios_base::trunc);
+	file.close();
+	file.open("Test", ios_base::app);
+	if (file.is_open()) {
+		for (int i = 0; i < listSize; i++) {
+			file << movieList[i].name << "\n";
+			file << movieList[i].type << "\n";
+			file << movieList[i].genre << "\n";
+			file << movieList[i].country << "\n";
+			file << movieList[i].year << "\n";
+			file << movieList[i].seasons << "\n";
+			file << movieList[i].series << "\n";
+			file << movieList[i].time << "\n";
+			file << movieList[i].plot << "\n";
+		}
+	}
+	file.close();
 }

@@ -10,13 +10,13 @@ private:
 	string type;
 	string genre;
 	string country;
-	unsigned int year;
-	unsigned int series;
-	unsigned int seasons;
-	double time;
+	string year;
+	string series;
+	string seasons;
+	string time;
 	string plot;
 	int movieID=0;
-	int listSize = 9;
+	int listSize = 1;
 	Movie* movieList;
 public:
 	void CreateMovie();
@@ -29,4 +29,7 @@ public:
 	void SearchByCountry();
 	void SearchByYear();
 	void EditMovie();
+	void WriteFile();
+	void ReadFile();
+	void FirstFile();
 };

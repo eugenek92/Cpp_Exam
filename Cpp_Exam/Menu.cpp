@@ -1,8 +1,10 @@
 #include <iostream>
 #include <string>
 #include "Movie.h"
+#include <fstream>
 
 using namespace std;
+
 
 void Mainmenu() {
 	int choice;
@@ -13,6 +15,8 @@ void Mainmenu() {
 	string username;
 	Movie Movies;
 	Movies.CreateMovie();
+	Movies.FirstFile();
+	/*Movies.ReadFile();*/
 	int deletingID = 0;
 	string searchName;
 
