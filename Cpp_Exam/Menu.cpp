@@ -14,9 +14,7 @@ void Mainmenu() {
 	bool exitMenu = false;
 	string username;
 	Movie Movies;
-	Movies.CreateMovie();
-	Movies.FirstFile();
-	/*Movies.ReadFile();*/
+    Movies.ReadFile();
 	int deletingID = 0;
 	string searchName;
 

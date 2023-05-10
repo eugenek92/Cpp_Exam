@@ -16,10 +16,9 @@ private:
 	string time;
 	string plot;
 	int movieID=0;
-	int listSize = 1;
+	int listSize = 0;
 	Movie* movieList;
 public:
-	void CreateMovie();
 	void FillMovieInf();
 	void ShowMovie();
 	void AddMovie();
@@ -31,5 +30,4 @@ public:
 	void EditMovie();
 	void WriteFile();
 	void ReadFile();
-	void FirstFile();
 };

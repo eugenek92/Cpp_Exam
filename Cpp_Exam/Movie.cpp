@@ -6,45 +6,13 @@
 using namespace std;
 fstream file;
 
-void Movie::CreateMovie() {
-	movieList = new Movie[listSize];
-	movieList[0].name = "Final_Fantasy";
-	movieList[0].type = "Cartoon series";
-	movieList[0].genre = "Anime";
-	movieList[0].country = "Japan";
-	movieList[0].year = "1992";
-	movieList[0].series = "18";
-	movieList[0].seasons = "15";
-	movieList[0].time = "25";
-	movieList[0].plot = "Japanese fantasy franchise, which has more than 10 seasons.";
-	movieList[0].movieID = 0;
-}
-
-void Movie::FirstFile() {
-	file.open("Test", ios::out);
-	if (file.is_open()) {
-		file << movieList[0].name << endl;
-		file << "Cartoon series\n";
-		file << "Anime\n";
-		file << "Japan\n";
-		file << "1992\n";
-		file << "18\n";
-		file << "15\n";
-		file << "25\n";
-		file << "Japanese fantasy franchise, which has more than 10 seasons.\n";
-		file.close();
-	}
-}
-
-
-
 void Movie::FillMovieInf() {
 	cout << "Enter object name: ";
 	getline(cin, name);
 	file.open("Test", ios_base::app);
 	file << name << "\n";
 	cout << "Enter "<< name <<" type (Movie, Cartoon, Serial, Cartoon series): ";
-	getline(cin, type);
+	getline(cin, name);
 	file << type << "\n";
 	cout << "Enter " << name << " genre (Action, Adventure, Anime Comedy, Drama, Documental, Fantasy, Mystery): ";
 	getline(cin, genre);
@@ -320,7 +288,7 @@ void Movie::ReadFile() {
 		file.clear();
 		file.seekg(0, ios::beg);
 		movieList = new Movie[listSize];
-		int i = 1;
+		int i = 0;
 		while (i < listSize) {
 			getline(file, movieList[i].name);
 			getline(file, movieList[i].type);
