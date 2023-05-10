@@ -7,9 +7,9 @@ using namespace std;
 fstream file;
 
 void Movie::FillMovieInf() {
+	file.open("Test", ios_base::app);
 	cout << "Enter object name: ";
 	getline(cin, name);
-	file.open("Test", ios_base::app);
 	file << name << "\n";
 	cout << "Enter "<< name <<" type (Movie, Cartoon, Serial, Cartoon series): ";
 	getline(cin, name);
