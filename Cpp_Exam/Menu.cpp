@@ -44,7 +44,7 @@ void Mainmenu() {
 				case 1:
 					system("cls");
 					Movies.ShowMovie();
-					cout << "0.Go back" << endl;
+					cout << "\n0.Go back" << endl;
 					cin >> choice;
 					switch (choice) {
 					case 0:
@@ -137,7 +137,7 @@ void Mainmenu() {
 					case 1:
 						system("cls");
 						Movies.ShowMovie();
-						cout << "0.Go back" << endl;
+						cout << "\n0.Go back" << endl;
 						cin >> choice;
 						switch (choice) {
 						case 0:
