@@ -7,10 +7,9 @@ using namespace std;
 fstream file;
 
 void Movie::FillMovieInf() {
-	file.open("CppList", ios_base::app);
-	getline(cin, name);
-	file << name << "\n";
+	file.open("CppList.txt", ios_base::app);
 	cout << "Enter object name: ";
+	cin.ignore();
 	getline(cin, name);
 	file << name << "\n";
 	cout << "Enter "<< name <<" type (Movie, Cartoon, Serial, Cartoon series): ";
@@ -87,7 +86,7 @@ void Movie::DeleteMovie(string deletingID) {
 			j--;
 		}
 	}
-	file.open("CppList", std::ofstream::out);
+	file.open("CppList.txt", std::ofstream::out);
 	file.close();
 
 	delete[]movieList;
@@ -99,7 +98,8 @@ void Movie::SearchByName() {
 	bool iSearch = false;
 	string searchName;
 	cout << "Enter the name you want to search: " << endl;
-	cin >> searchName;
+	cin.ignore();
+	getline(cin, searchName);
 	system("cls");
 	cout << "Results for searching name: " << searchName << endl;
 	for (int i = 0; i < listSize; i++) {
@@ -120,7 +120,7 @@ void Movie::SearchByName() {
 		}
 	}
 	if (!iSearch) {
-		cout << "Sorry, we hawn't object with year " << searchName << endl;
+		cout << "Sorry, we hawn't object with name " << searchName << endl;
 	}
 	system("pause");
 }
@@ -129,7 +129,8 @@ void Movie::SearchByGenre() {
 	bool iSearch = false;
 	string searchGenre;
 	cout << "Enter the genre you want to search: " << endl;
-	cin >> searchGenre;
+	cin.ignore();
+	getline(cin, searchGenre);
 	system("cls");
 	cout << "Results for searching genre: " << searchGenre << endl;
 	for (int i = 0; i < listSize; i++) {
@@ -150,7 +151,7 @@ void Movie::SearchByGenre() {
 		}
 	}
 	if (!iSearch) {
-		cout << "Sorry, we hawn't object with year " << searchGenre << endl;
+		cout << "Sorry, we hawn't object with genre " << searchGenre << endl;
 	}
 	system("pause");
 }
@@ -180,7 +181,7 @@ void Movie::SearchByCountry() {
 		}
 	}
 	if (!iSearch) {
-		cout << "Sorry, we hawn't object with year " << searchCountry << endl;
+		cout << "Sorry, we hawn't object with country of production " << searchCountry << endl;
 	}
 	system("pause");
 }
@@ -278,13 +279,13 @@ void Movie::EditMovie() {
 			}
 		}
 	}
-	file.open("CppList", std::ofstream::out);
+	file.open("CppList.txt", std::ofstream::out);
 	file.close();
 }
 
 
 void Movie::ReadFile() {
-	file.open("CppList", ios_base::in);
+	file.open("CppList.txt", ios_base::in);
 	if (file.is_open()) {
 		string line;
 		int count = 0;
@@ -314,9 +315,9 @@ void Movie::ReadFile() {
 }
 
 void Movie::WriteFile() {
-	file.open("CppList", ios_base::trunc);
+	file.open("CppList.txt", ios_base::trunc);
 	file.close();
-	file.open("CppList", ios_base::app);
+	file.open("CppList.txt", ios_base::app);
 	if (file.is_open()) {
 		for (int i = 0; i < listSize; i++) {
 			file << movieList[i].name << "\n";

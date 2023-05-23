@@ -34,8 +34,9 @@ void Mainmenu() {
 				system("cls");
 				cout << "======================CppStream======================" << endl;
 				cout << "Hello " << username << "!" << "\nWelcome to our stream-service \"CppStream\"" << endl;
-				cout << "\n(!) " << username << " if you use \"CppStream\" first time, please read the rules of writing (section 3) ";
-				cout << "\n" << username << " please, select what you want to do: ";
+				cout << "\n(!) " << username << " if you use \"CppStream\" first time, please read brief information about our service (section 3) "<<endl;
+				cout << " " << endl;
+				cout <<  username << " please, select what you want to do: ";
 				cout << "\n\n1.Show store\n2.Search\n3.Rules of use and information\n0.Exit" << endl;
 				cin >> choice;
 				switch (choice) {
@@ -90,11 +91,15 @@ void Mainmenu() {
 						"\n\nThank you for reading!\n" <<
 						"CppStream is examination project, which was created to meet the needs " <<
 						"\nof finding information about movies, " <<
-						"serials, cartoon's, anime. "<<
-						"\n\n===========================Rules of writing==========================="<<
-						"\n" <<username<<", to write words with spaces use \"_\""<<
-						"\nExample: \"Hello world\" must be wright like \"Hello_world\"" <<
-						"\n\nWe hope you enjoy using our app CppStream" <<
+						"serials, cartoon's, anime. "<< endl;
+					    cout << " " << endl;
+						cout << username << ", as a user you can use such functionality:" <<
+						"\nShow store - this will allow you to browse our media library;" <<
+						"\nSearch - this feature allows you to search for a media file by name, genre, country of manufacture or year of release." << endl;
+					    cout << " " << endl;
+						cout << username << ", if you are an administrator and want to make changes to our library" <<
+						" please, log in using your password." <<
+						"\n\nWe hope you enjoy using our app CppStream!" <<
 						"\n\n0.Go back" << endl;
 					cin >> choice;
 					switch (choice) {
