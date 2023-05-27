@@ -8,3 +8,63 @@ Japan
 25
 Fairytale stories in the long-running Japanese franchise.
 1
+Home Alone
+Movie
+Comedy
+USA
+1993
+none
+none
+154
+Home Alone is American comedy film for whole family.
+2
+Warcraft
+Movie
+Fantasy
+USA
+2016
+none
+none
+96
+Fantasy film based on the video game series of the same name.
+3
+ALF
+Serial
+Comedy
+USA
+1990
+4
+102
+21
+ALF is an American television family sitcom.
+4
+Vikings
+Serial
+Action
+Canada
+2013
+6
+89
+50
+Action drama television series, based on legends of vikings.
+5
+Pokemon
+Cartoon series
+Anime
+Japan
+1997
+25
+52
+23
+Popular childrens anime, based on the game series of the same name.
+6
+Fifth Element
+Movie
+Action
+France
+1997
+none
+none
+113
+English-speaking French action movie.
+7
